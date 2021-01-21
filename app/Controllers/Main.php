@@ -99,7 +99,7 @@ class Main extends BaseController
         $data['jumlahMeninggal'] = $query->getResult();
 
 
-        $query = $db->query("SELECT COUNT(STATUS) AS JUMLAH FROM PASIEN WHERE STATUS = 'POSITF'");
+        $query = $db->query("SELECT COUNT(STATUS) AS JUMLAH FROM PASIEN WHERE STATUS = 'POSITIF'");
         $data['jumlahPositif'] = $query->getResult();
         
         $data['totalCaseNumber'] = $data['jumlahSembuh'][0]->JUMLAH +  $data['jumlahMeninggal'][0]->JUMLAH +  $data['jumlahPositif'][0]->JUMLAH;

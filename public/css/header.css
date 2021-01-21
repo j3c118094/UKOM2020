@@ -33,3 +33,16 @@
     padding: 30px;
 }
 
+html {
+    scroll-behavior: smooth;
+} 
+
+.headlines{
+    transition:500ms ease;
+    border: 0;
+}
+
+.headlines.scrolled{
+    background-color:rgb(58, 123, 209);
+
+}

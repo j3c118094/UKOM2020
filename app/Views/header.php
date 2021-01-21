@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-   <!-- ================================================================================================================================================================================================================================ -->
+    <!-- ================================================================================================================================================================================================================================ -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous">
     <!-- ================================================================================================================================================================================================================================ -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- ================================================================================================================================================================================================================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <!-- ================================================================================================================================================================================================================================ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <!-- ================================================================================================================================================================================================================================ -->
     <link rel="stylesheet" href="/css/header.css">
-
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
-    
-
+    <!-- ================================================================================================================================================================================================================================ -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <!-- ================================================================================================================================================================================================================================ -->
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
-
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="/js/fusioncharts.js"></script>
-
+    <!-- ================================================================================================================================================================================================================================ -->
     <script type="text/javascript" src="/js/themes/fusioncharts.theme.fusion.js"></script>
 
     <title>UKOM-INF2021</title>
@@ -38,12 +47,15 @@
     <div class="container">
       <a class="navbar-brand" href="#">COVERSUS</a>
       <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-    <button type="button" class="btn btn-primary">#HEADLINE</button>
+    <button type="button" id="headliner" class="btn btn-danger headlines" disabled>MENU</button>
     <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+        <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle headlines" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="#">Dropdown link</a>
-        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="#stats">Statistics</a>
+        <a class="dropdown-item" href="#si">System Information</a> 
+        <a class="dropdown-item" href="#multimedia">Multimedia</a>
+        <a class="dropdown-item" href="#top">Extra</a>
+        <a class="dropdown-item" href="#top">Back to Top</a>
         </div>
     </div>
     </div>
@@ -52,7 +64,7 @@
 
 
   <header class="container text-white text-center">
-    <div class="mainbg"></div>
+    <div id="top" class="mainbg"></div>
     <div class="container containme">
       <div class="row">
         <div class="col-xl-9 mx-auto">
@@ -76,7 +88,7 @@
   </header>
 
     <!-- Icons Grid -->
-    <section class="features-icons bg-light text-center" style="height: 100vh;">
+    <section id="stats" class="features-icons bg-light text-center" style="height: 100vh;">
     <div class="container containtips" >
       <div class="row">
         <div class="col-lg-4">
@@ -182,7 +194,54 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
 </section>
 
 
-<section>
+
+  <section id="si" class="features-icons bg-light text-center" style="height: 100vh;">
+    <div class="container containtips" >
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>AGES 65+ </h3>
+
+            <blockquote class="blockquote text-center">
+            <p class="lead mb-0">Elders are easier to be infected by COVID-19, please take care.</p>
+            </blockquote>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>ONLY 9</h3>
+            
+            <blockquote class="blockquote text-center">
+            <p class="lead mb-0">Spread across 100+ Sub-districts, ONLY 9 hospitals are assigned to take COVID patients.</p><br /> <br /> <br /><br /><br />
+            <p><small>Every info in this website is purely fictional and made-up.</small></p>
+            </blockquote>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-check m-auto text-primary"></i>
+            </div>
+                <h3>ONLY 35 DOCTORS</h3>
+
+            <blockquote class="blockquote text-center">
+                <p class="lead mb-0">Didn't stop there, this district only enforces 35 capable doctors.</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section  style="min-height: 100vh;">
     <div class="container">
     <div class="row">
         <div class="col-lg-10 col-sm-12 mx-auto text-center bg-white py-3 px-4">
@@ -374,7 +433,27 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
     </div>
 </section>
 
-<section style="height: 100vh;">
+<section id="multimedia" class="features-icons bg-light text-center" style="height: 100vh;">
+    <div class="container containtips" >
+      <div class="row">
+      <div class="col"></div>
+        <div class="col-lg-8">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <h3>This is the multimedia page</h3>
+            
+            <blockquote class="blockquote text-center">
+            <p class="lead mb-0">Please enjoy this uplifting music with Kinetic Typography. </p><br /> <br /> <br />
+            <p><small>Psst... I got copyrighted.</small></p>
+            </blockquote>
+          </div>
+        </div>
+       
+      <div class="col"></div>
+      </div>
+    </div>
+  </section>
+
+<section  style="height: 100vh;">
     <div class="container">
         <div class="row">
             <div class="col-12 mx-auto text-center py-3">
@@ -383,6 +462,58 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
         </div>
     </div>
 </section>
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light shadow" style="height: 25vh; padding-top: 2rem;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#top">Back To Top</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#multimedia">Multimedia</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#si">Information Systems</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#stats">Statistics</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#stats">Extra</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; COVERSUS. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fa fa-facebook-square fa-2x fa-fw" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fa fa-twitter-square fa-2x fa-fw" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-instagram fa-2x fa-fw" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 <script>
  $(document).ready(function() {
@@ -476,6 +607,10 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
             'pdfHtml5'
         ]
     } );
+
+    $(window).scroll(function(){
+	    $('.headlines').toggleClass('scrolled', $(this).scrollTop() > 600);
+    });
 
 } );
 
