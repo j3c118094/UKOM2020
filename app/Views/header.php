@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- ================================================================================================================================================================================================================================ -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous">
     <!-- ================================================================================================================================================================================================================================ -->
@@ -54,7 +55,7 @@
         <a class="dropdown-item" href="#stats">Statistics</a>
         <a class="dropdown-item" href="#si">System Information</a> 
         <a class="dropdown-item" href="#multimedia">Multimedia</a>
-        <a class="dropdown-item" href="#top">Extra</a>
+        <a class="dropdown-item" href="#comments">Comments</a>
         <a class="dropdown-item" href="#top">Back to Top</a>
         </div>
     </div>
@@ -70,7 +71,7 @@
         <div class="col-xl-9 mx-auto">
             <h1 class="mb-5">Self Contained COVID-19 Information on Kabupaten Bekasi</h1>
         </div>
-        <div class="col-md-10 col-lg-8 col-xl-12 mx-auto stats">
+        <div class=".d-sm-none .d-md-block col-md-10 col-lg-8 col-xl-12 mx-auto stats ">
             <div class="row ">
                 <div class="col">
                     <h2>TOTAL CASES <br><br> <?= $totalCaseNumber ?></h2>
@@ -464,6 +465,69 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
 </section>
 
 
+<section id="comments"  class="features-icons bg-light text-center" style="height: 100vh;">
+    <div class="container " >
+      <div class="row">
+      <div class="col"></div>
+        <div class="col-lg-8">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <h3>Leave a track!</h3>
+            
+            <blockquote class="blockquote text-center">
+            <p class="lead mb-0">I truly hope you enjoy this website with all its flaws, if you do, be sure to let me know! regards. </p>
+            </blockquote>
+            <form id="comment" action="<?php echo site_url('Main/send'); ?>" method="POST">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" class="form-control" name="nama" id="exampleFormControlInput1" placeholder="It doesn't have to be real ;)">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Comment</label>
+                <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2 py-2 w-100">Send Comment</button>
+            </form>
+
+          </div>
+        </div>
+       
+      <div class="col"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-icons bg-light text-center" style="min-height: 75vh;">
+    <div class="container " >
+      <div class="row">
+      <div class="col"></div>
+        <div class="col-lg-8">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <h3>Comments are shown below</h3>
+            
+            <blockquote class="blockquote text-center">
+            <p class="lead mb-0">Check if yours are posted! </p>
+            
+            <br /> <br /> <br />
+            <?php 
+            
+            foreach ($comments as $comment) {
+                echo ' <p><small>"'.$comment->COMMENT.'"</small></p>';
+                echo ' <small>--- &nbsp;'.$comment->NAMA.'</small>';
+                echo '<br><br><br>';
+            } 
+           
+
+            ?>
+            </blockquote>
+          </div>
+        </div>
+       
+      <div class="col"></div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- Footer -->
   <footer class="footer bg-light shadow" style="height: 25vh; padding-top: 2rem;">
     <div class="container">
@@ -487,7 +551,7 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#stats">Extra</a>
+              <a href="#comments">Comments</a>
             </li>
           </ul>
           <p class="text-muted small mb-4 mb-lg-0">&copy; COVERSUS. All Rights Reserved.</p>

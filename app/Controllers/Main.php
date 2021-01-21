@@ -5,6 +5,7 @@ use App\Models\Kelurahan_Model;
 use App\Models\Hospital_Model;
 use App\Models\Dokter_Model;
 use App\Models\Pasien_Model;
+use App\Models\Comment_Model;
 
 class Main extends BaseController
 {
@@ -15,6 +16,7 @@ class Main extends BaseController
 		$this->rsModel = new Hospital_Model();
 		$this->dokModel = new Dokter_Model();
 		$this->pasModel = new Pasien_Model();
+		$this->comModel = new Comment_Model();
     }
 
 
@@ -104,11 +106,30 @@ class Main extends BaseController
         
         $data['totalCaseNumber'] = $data['jumlahSembuh'][0]->JUMLAH +  $data['jumlahMeninggal'][0]->JUMLAH +  $data['jumlahPositif'][0]->JUMLAH;
 
+
+        $data['comments'] = $this->comModel->findAll();
+
         echo view('header.php', $data);
 		echo view('main.php');
 	    echo view('footer.php');
 	}
 
+
+    public function send() {
+
+        $data = [
+            'ID' => '',
+            'NAMA' => $this->request->getPost('nama'),
+			'COMMENT' => $this->request->getPost('comment'),
+        ];
+
+		$response = $this->comModel->insert($data);
+
+        
+
+        return redirect()->to(site_url('Main/index'));
+	}
+	
 	//--------------------------------------------------------------------
 
 }
