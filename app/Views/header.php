@@ -61,13 +61,13 @@
         <div class="col-md-10 col-lg-8 col-xl-12 mx-auto stats">
             <div class="row ">
                 <div class="col">
-                    <h2>TOTAL CASES <br><br> 884</h2>
+                    <h2>TOTAL CASES <br><br> <?= $totalCaseNumber ?></h2>
                 </div>
                 <div class="col">
-                    <h2>RECOVERED <br><br> 827</h2>
+                    <h2>RECOVERED <br><br>  <?= $jumlahSembuh[0]->JUMLAH ?></h2>
                 </div>
                 <div class="col">
-                    <h2>DEATHS <br><br> 342</h2>
+                    <h2>FATALITY <br><br>  <?= $jumlahMeninggal[0]->JUMLAH ?></h2>
                 </div>
             </div>
         </div>
@@ -149,8 +149,8 @@ $chartData = '{"label": "Female","value": "'.$Female[0]->JUMLAH.'"}, {"label": "
 
 $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", "json", '{
     "chart": {
-      "caption": "Market Share of Web Servers",
-      "plottooltext": "<b>$percentValue</b> of web servers run on $label servers",
+      "caption": "Covid Patient Gender Distribution",
+      "plottooltext": "<b>$percentValue</b> of covid patients are $label ",
       "showlegend": "1",
       "showpercentvalues": "1",
       "legendposition": "bottom",
@@ -267,6 +267,107 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
             </table>
         </div>
 
+        <div id="table3">
+            <table id="byage" class="display nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Age Group</th>
+                        <th>Number of Patients</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+
+                    $i=1;
+                    foreach ($ageGroup as $age => $people) {
+                        echo '<tr>';
+                        echo '<td>'.$i.'</td>';
+                        echo '<td>'.$age.'</td>';
+                        echo '<td>'.$people.'</td>';
+                        echo '</tr>';
+                        $i+=1;
+                    }
+
+                    ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>No</th>
+                        <th>Age Group</th>
+                        <th>Number of Patients</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div id="table4">
+            <table id="hospital" class="display nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Hospital Name</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+
+                    $i=1;
+                    foreach ($dataHospital as $rs) {
+                        echo '<tr>';
+                        echo '<td>'.$i.'</td>';
+                        echo '<td>'.$rs->NAMARS.'</td>';
+                        echo '<td>'.$rs->KONTAK.'</td>';
+                        echo '</tr>';
+                        $i+=1;
+                    }
+
+                    ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>No</th>
+                        <th>Hospital Name</th>
+                        <th>Contact</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div id="table5">
+            <table id="doctor" class="display nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Doctor Name</th>
+                        <th>On Duty at</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+
+                    $i=1;
+                    foreach ($dataDocs as $doc) {
+                        echo '<tr>';
+                        echo '<td>'.$i.'</td>';
+                        echo '<td>'.$doc->NAMADOK.'</td>';
+                        echo '<td>'.$doc->NAMARS.'</td>';
+                        echo '</tr>';
+                        $i+=1;
+                    }
+
+                    ?>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>No</th>
+                        <th>Doctor Name</th>
+                        <th>On Duty at</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
         </div>
     </div>
@@ -285,13 +386,44 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
 
 <script>
  $(document).ready(function() {
+
+    $('#table1').show();
+    $('#table2').hide();
+    $('#table3').hide();
+    $('#table4').hide();
+    $('#table5').hide();
+
     $('#data').on('change', function() {
         if (this.value == "monthly"){
             $('#table1').show();
             $('#table2').hide();
+            $('#table3').hide();
+            $('#table4').hide();
+            $('#table5').hide();
         } else if (this.value == "bysub"){
             $('#table1').hide();
             $('#table2').show();
+            $('#table3').hide();
+            $('#table4').hide();
+            $('#table5').hide();
+        } else if (this.value == "byage"){
+            $('#table1').hide();
+            $('#table2').hide();
+            $('#table3').show();
+            $('#table4').hide();
+            $('#table5').hide();
+        } else if (this.value == "hospital"){
+            $('#table1').hide();
+            $('#table2').hide();
+            $('#table3').hide();
+            $('#table4').show();
+            $('#table5').hide();
+        } else if (this.value == "doctor"){
+            $('#table1').hide();
+            $('#table2').hide();
+            $('#table3').hide();
+            $('#table4').hide();
+            $('#table5').show();
         }
     });
 
@@ -314,6 +446,37 @@ $columnChart = new FusionCharts("pie2d", "gender", "100%", 400, "chart-gender", 
             'pdfHtml5'
         ]
     } );
+
+    $('#byage').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+
+    $('#hospital').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+
+    $('#doctor').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+
 } );
 
 </script>

@@ -544,3 +544,58 @@ CRITICAL - 2021-01-20 19:20:34 --> Undefined variable: Bulan
 #7 /var/www/html/UKOM/public/index.php(45): CodeIgniter\CodeIgniter->run()
 #8 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/var/www/html/U...')
 #9 {main}
+CRITICAL - 2021-01-20 21:24:20 --> Undefined property: stdClass::$NAMADOC
+#0 /var/www/html/UKOM/app/Views/header.php(354): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/UKOM/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/U...')
+#2 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/UKOM/app/Controllers/Main.php(95): view()
+#4 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Main->index()
+#5 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/UKOM/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/var/www/html/U...')
+#9 {main}
+CRITICAL - 2021-01-20 21:24:37 --> Undefined property: stdClass::$NAMARS
+#0 /var/www/html/UKOM/app/Views/header.php(355): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/UKOM/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/U...')
+#2 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/UKOM/app/Controllers/Main.php(95): view()
+#4 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Main->index()
+#5 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/UKOM/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/var/www/html/U...')
+#9 {main}
+CRITICAL - 2021-01-20 21:24:40 --> Undefined property: stdClass::$NAMARS
+#0 /var/www/html/UKOM/app/Views/header.php(355): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/UKOM/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/U...')
+#2 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/UKOM/app/Controllers/Main.php(95): view()
+#4 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Main->index()
+#5 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/UKOM/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/var/www/html/U...')
+#9 {main}
+CRITICAL - 2021-01-20 21:24:41 --> Undefined property: stdClass::$NAMARS
+#0 /var/www/html/UKOM/app/Views/header.php(355): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/UKOM/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/U...')
+#2 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/UKOM/app/Controllers/Main.php(95): view()
+#4 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Main->index()
+#5 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/UKOM/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/var/www/html/U...')
+#9 {main}
+CRITICAL - 2021-01-20 21:32:51 --> Array to string conversion
+#0 /var/www/html/UKOM/app/Views/header.php(67): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/UKOM/vendor/codeigniter4/framework/system/View/View.php(246): include('/var/www/html/U...')
+#2 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render()
+#3 /var/www/html/UKOM/app/Controllers/Main.php(107): view()
+#4 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Main->index()
+#5 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/UKOM/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/UKOM/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/UKOM/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/var/www/html/U...')
+#9 {main}

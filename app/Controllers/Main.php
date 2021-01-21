@@ -45,6 +45,19 @@ class Main extends BaseController
         $data['dataPasien'] = $this->pasModel->findAll();
 
 
+        $query = $db->query("SELECT AGE FROM PASIEN");
+        $data['dataAge'] = $query->getResult();
+
+        $ageGroup = [];
+        foreach ($data['dataAge'] as $age ) {
+            if (array_key_exists($age->AGE, $ageGroup)) {
+                $ageGroup[$age->AGE] += 1;
+            } else {
+                $ageGroup[$age->AGE] = 1;
+            }
+        }
+
+        $data['ageGroup'] = $ageGroup;
 
         $listBulan = [];
         $sortedBulan = [];
@@ -69,6 +82,28 @@ class Main extends BaseController
 
         $query = $db->query("SELECT COUNT(SEX) AS JUMLAH FROM PASIEN WHERE SEX = 'L'");
         $data['Male'] = $query->getResult();
+
+
+        $query = $db->query("SELECT NAMARS, ALAMAT, KONTAK FROM RS");
+        $data['dataHospital'] = $query->getResult();
+
+
+        $query = $db->query("SELECT DOKTER.NAMADOK AS NAMADOK, RS.NAMARS AS NAMARS FROM DOKTER INNER JOIN RS ON DOKTER.DUTYCODE=RS.KODERS");
+        $data['dataDocs'] = $query->getResult();
+
+
+        $query = $db->query("SELECT COUNT(STATUS) AS JUMLAH FROM PASIEN WHERE STATUS = 'SEMBUH'");
+        $data['jumlahSembuh'] = $query->getResult();
+
+        $query = $db->query("SELECT COUNT(STATUS) AS JUMLAH FROM PASIEN WHERE STATUS = 'MENINGGAL'");
+        $data['jumlahMeninggal'] = $query->getResult();
+
+
+        $query = $db->query("SELECT COUNT(STATUS) AS JUMLAH FROM PASIEN WHERE STATUS = 'POSITF'");
+        $data['jumlahPositif'] = $query->getResult();
+        
+        $data['totalCaseNumber'] = $data['jumlahSembuh'][0]->JUMLAH +  $data['jumlahMeninggal'][0]->JUMLAH +  $data['jumlahPositif'][0]->JUMLAH;
+
         echo view('header.php', $data);
 		echo view('main.php');
 	    echo view('footer.php');
