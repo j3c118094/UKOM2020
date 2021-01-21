@@ -110,8 +110,8 @@ class Main extends BaseController
         $data['comments'] = $this->comModel->findAll();
 
         echo view('header.php', $data);
-		echo view('main.php');
-	    echo view('footer.php');
+		echo view('main.php', $data);
+	    echo view('footer.php', $data);
 	}
 
 
